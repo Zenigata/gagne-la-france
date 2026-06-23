@@ -51,7 +51,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 14)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Skip"
+text = "Passer"
 
 [node name="CardTooltipPopup" parent="." instance=ExtResource("2_738we")]
 visible = false
@@ -72,4 +72,4 @@ offset_right = 25.0
 offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Take"
+text = "Prendre"

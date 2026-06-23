@@ -13,5 +13,5 @@ target = 1
 cost = 1
 exhausts = false
 icon = ExtResource("1_p0xvk")
-tooltip_text = "[center]Deal [color=\"ff0000\"]%s[/color] damage. +%s damage this combat.[/center]"
+tooltip_text = "[center]Inflige [color=\"ff0000\"]%s[/color] dégâts. Attaque boostée de +%s pour le reste du combat[/center]"
 sound = ExtResource("3_uxg0o")

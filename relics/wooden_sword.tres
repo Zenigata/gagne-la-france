@@ -13,4 +13,4 @@ type = 4
 character_type = 0
 starter_relic = false
 icon = ExtResource("1_ub7wh")
-tooltip = "Whenever you play 3 skills during your turn, deal 5 damage to all enemies."
+tooltip = "Pour chaque 3 cartes Compétence jouées le même tour, inflige [color=\"ffdf00\"]5[/color] dégâts à tous les ennemis"

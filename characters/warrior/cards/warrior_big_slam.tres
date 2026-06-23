@@ -13,5 +13,5 @@ target = 1
 cost = 2
 exhausts = true
 icon = ExtResource("1_11nym")
-tooltip_text = "[center]Deal [color=\"ff0000\"]%s[/color] damage and apply 2 [color=\"ffdf00\"]Exposed[/color].[/center]"
+tooltip_text = "[center]Inflige [color=\"ff0000\"]%s[/color] dégâts puis applique [color=\"ffdf00\"]2[/color] Faiblesse[/center]"
 sound = ExtResource("3_0l7j0")

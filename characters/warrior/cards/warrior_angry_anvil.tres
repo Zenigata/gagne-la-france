@@ -13,5 +13,5 @@ target = 0
 cost = 1
 exhausts = false
 icon = ExtResource("1_3oe33")
-tooltip_text = "[center]Gain [color=\"0044ff\"]%s[/color] block. Exhaust 1 random card.[/center]"
+tooltip_text = "[center]Procure [color=\"0044ff\"]%s[/color] Bouclier. Épuise 1 carte au hasard[/center]"
 sound = ExtResource("3_oo1yl")

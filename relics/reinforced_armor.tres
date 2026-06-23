@@ -12,5 +12,5 @@ type = 2
 character_type = 2
 starter_relic = false
 icon = ExtResource("1_af34x")
-tooltip = "[color=\"ffdf00\"]Reinforced Armor[/color]
-At the end of your turn, gain 3 block."
+tooltip = "[color=\"ffdf00\"]Armure renforcée[/color]
+Chaque tour, procure 3 Bouclier"

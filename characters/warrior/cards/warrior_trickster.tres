@@ -13,5 +13,5 @@ target = 0
 cost = 0
 exhausts = false
 icon = ExtResource("1_huvsc")
-tooltip_text = "[center]Gain [color=\"0044ff\"]%s[/color] block. Draw 1 card.[/center]"
+tooltip_text = "[center]Procure [color=\"0044ff\"]%s[/color] Bouclier. Pioche 1 carte[/center]"
 sound = ExtResource("2_bd85j")

@@ -13,6 +13,6 @@ target = 2
 cost = 2
 exhausts = false
 icon = ExtResource("1_uhc8e")
-tooltip_text = "[center]Deal [color=\"ff0000\"]%s[/color] damage
-to all enemies.[/center]"
+tooltip_text = "[center]Inflige [color=\"ff0000\"]%s[/color] dégâts
+à tous les ennemis[/center]"
 sound = ExtResource("3_4dvu8")

@@ -11,4 +11,4 @@ type = 1
 character_type = 0
 starter_relic = false
 icon = ExtResource("1_gw7ui")
-tooltip = "Gain 1 extra energy at the start of each turn. You no longer see enemy intents. "
+tooltip = "Procure 1 mana chaque tour, mais cache les attaques ennemies"
