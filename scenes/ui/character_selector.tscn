@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://d2f6dhxp12xvl"]
+[gd_scene format=3 uid="uid://d2f6dhxp12xvl"]
 
-[ext_resource type="Script" path="res://scenes/ui/character_selector.gd" id="1_lqh53"]
+[ext_resource type="Script" uid="uid://bdr88rkwgwcf3" path="res://scenes/ui/character_selector.gd" id="1_lqh53"]
 [ext_resource type="Resource" uid="uid://bd874b0h1q8n1" path="res://scenes/run/run_startup.tres" id="2_rlyfg"]
 [ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://art/tile_0118.png" id="3_pty20"]
 [ext_resource type="Texture2D" uid="uid://pgj8vfpj6tc5" path="res://art/tile_0130.png" id="4_20uvy"]
@@ -27,7 +27,7 @@ shadow_color = Color(0.54902, 0.443137, 0.376471, 0.333333)
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_2s2at"]
 
-[node name="CharacterSelector" type="Control"]
+[node name="CharacterSelector" type="Control" unique_id=1138456558]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,7 +37,7 @@ grow_vertical = 2
 script = ExtResource("1_lqh53")
 run_startup = ExtResource("2_rlyfg")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=176628206]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,7 +46,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_1kxac")
 
-[node name="CharacterText" type="VBoxContainer" parent="."]
+[node name="CharacterText" type="VBoxContainer" parent="." unique_id=335297511]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -57,7 +57,7 @@ offset_right = 120.0
 offset_bottom = 74.0
 grow_horizontal = 2
 
-[node name="Title" type="Label" parent="CharacterText"]
+[node name="Title" type="Label" parent="CharacterText" unique_id=163664037]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Guerrier"
@@ -65,16 +65,16 @@ label_settings = SubResource("LabelSettings_rnxpd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Description" type="Label" parent="CharacterText"]
+[node name="Description" type="Label" parent="CharacterText" unique_id=847889990]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Découpe tout ce qui bouge.
+text = "Decoupe tout ce qui bouge.
 Second line of text."
 label_settings = SubResource("LabelSettings_aveil")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CharacterPortrait" type="TextureRect" parent="."]
+[node name="CharacterPortrait" type="TextureRect" parent="." unique_id=1051859378]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
@@ -90,7 +90,7 @@ texture = ExtResource("4_bt743")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="StartButton" type="Button" parent="."]
+[node name="StartButton" type="Button" parent="." unique_id=2076681642]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -103,9 +103,9 @@ offset_right = -10.0
 offset_bottom = -10.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Commencer"
+text = "Jouer"
 
-[node name="CharacterButtons" type="HBoxContainer" parent="."]
+[node name="CharacterButtons" type="HBoxContainer" parent="." unique_id=339774775]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -120,14 +120,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 15
 
-[node name="WarriorButton" type="Button" parent="CharacterButtons"]
+[node name="WarriorButton" type="Button" parent="CharacterButtons" unique_id=2094980734]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 toggle_mode = true
 button_pressed = true
 button_group = SubResource("ButtonGroup_2s2at")
 
-[node name="Icon" type="TextureRect" parent="CharacterButtons/WarriorButton"]
+[node name="Icon" type="TextureRect" parent="CharacterButtons/WarriorButton" unique_id=471541091]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -144,13 +144,13 @@ texture = ExtResource("3_pty20")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="WizardButton" type="Button" parent="CharacterButtons"]
+[node name="WizardButton" type="Button" parent="CharacterButtons" unique_id=2104616093]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_2s2at")
 
-[node name="Icon" type="TextureRect" parent="CharacterButtons/WizardButton"]
+[node name="Icon" type="TextureRect" parent="CharacterButtons/WizardButton" unique_id=1948027534]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -167,13 +167,13 @@ texture = ExtResource("4_20uvy")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="AssassinButton" type="Button" parent="CharacterButtons"]
+[node name="AssassinButton" type="Button" parent="CharacterButtons" unique_id=1881728015]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_2s2at")
 
-[node name="Icon" type="TextureRect" parent="CharacterButtons/AssassinButton"]
+[node name="Icon" type="TextureRect" parent="CharacterButtons/AssassinButton" unique_id=2065866783]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

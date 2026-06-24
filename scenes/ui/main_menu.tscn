@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://4tj0qise1som"]
+[gd_scene format=3 uid="uid://4tj0qise1som"]
 
-[ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_bck1p"]
+[ext_resource type="Script" uid="uid://c5lurucavk6a2" path="res://scenes/ui/main_menu.gd" id="1_bck1p"]
 [ext_resource type="Texture2D" uid="uid://dpfqok8tuy4r7" path="res://art/tile_0084.png" id="1_uaqd2"]
 [ext_resource type="Resource" uid="uid://bd874b0h1q8n1" path="res://scenes/run/run_startup.tres" id="2_4poyw"]
 [ext_resource type="Texture2D" uid="uid://cwf6dyi56tgo" path="res://art/tile_0088.png" id="2_tcnoe"]
@@ -21,7 +21,7 @@ line_spacing = 10.0
 shadow_size = 4
 shadow_color = Color(0.54902, 0.443137, 0.376471, 0.333333)
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" unique_id=997202810]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,7 +31,7 @@ grow_vertical = 2
 script = ExtResource("1_bck1p")
 run_startup = ExtResource("2_4poyw")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=1164484640]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,7 +40,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_1kxac")
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="." unique_id=1603161820]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -48,9 +48,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -105.0
-offset_top = -57.0
+offset_top = -70.5
 offset_right = 105.0
-offset_bottom = -13.0
+offset_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "My Awesome
@@ -59,7 +59,7 @@ label_settings = SubResource("LabelSettings_rnxpd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1286554702]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -74,50 +74,50 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 8
 
-[node name="Continue" type="Button" parent="VBoxContainer"]
+[node name="Continue" type="Button" parent="VBoxContainer" unique_id=1180521517]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 14)
 layout_mode = 2
-text = "Continue"
+text = "Continuer"
 
-[node name="NewRun" type="Button" parent="VBoxContainer"]
+[node name="NewRun" type="Button" parent="VBoxContainer" unique_id=84607036]
 custom_minimum_size = Vector2(0, 14)
 layout_mode = 2
-text = "New Run"
+text = "Nouvelle partie"
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1021925122]
 custom_minimum_size = Vector2(0, 14)
 layout_mode = 2
-text = "Exit"
+text = "Quitter"
 
-[node name="Wizard" type="Sprite2D" parent="."]
+[node name="Wizard" type="Sprite2D" parent="." unique_id=583504901]
 position = Vector2(20, 105)
 scale = Vector2(2, 2)
 texture = ExtResource("1_uaqd2")
 
-[node name="Assassin" type="Sprite2D" parent="."]
+[node name="Assassin" type="Sprite2D" parent="." unique_id=1775244948]
 position = Vector2(49, 100)
 scale = Vector2(2, 2)
 texture = ExtResource("2_tcnoe")
 
-[node name="Warrior" type="Sprite2D" parent="."]
+[node name="Warrior" type="Sprite2D" parent="." unique_id=1650277166]
 position = Vector2(37, 121)
 scale = Vector2(2, 2)
 texture = ExtResource("3_vcouc")
 
-[node name="Bat" type="Sprite2D" parent="."]
+[node name="Bat" type="Sprite2D" parent="." unique_id=334097458]
 position = Vector2(204, 105)
 scale = Vector2(2, 2)
 texture = ExtResource("4_snr5i")
 flip_h = true
 
-[node name="Crab" type="Sprite2D" parent="."]
+[node name="Crab" type="Sprite2D" parent="." unique_id=865593230]
 position = Vector2(220, 125)
 scale = Vector2(2, 2)
 texture = ExtResource("5_pintp")
 flip_h = true
 
-[node name="Ghost" type="Sprite2D" parent="."]
+[node name="Ghost" type="Sprite2D" parent="." unique_id=1842034765]
 position = Vector2(233, 101)
 scale = Vector2(2, 2)
 texture = ExtResource("6_6iwyb")

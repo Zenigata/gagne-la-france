@@ -71,16 +71,16 @@ theme_override_constants/separation = 20
 [node name="Message" type="Label" parent="VboxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "The Warrior
-is victorious!"
+text = "Le guerrier
+est vainqueur !"
 label_settings = SubResource("LabelSettings_aveil")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MainMenuButton" type="Button" parent="VboxContainer"]
-custom_minimum_size = Vector2(60, 14)
+custom_minimum_size = Vector2(80, 14)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Main Menu"
+text = "Menu principal"
 
 [connection signal="pressed" from="VboxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

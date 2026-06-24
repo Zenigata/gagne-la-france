@@ -147,7 +147,7 @@ offset_right = -58.0
 offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Quitter"
+text = "Sortir"
 
 [node name="ShopContent" type="VBoxContainer" parent="UILayer"]
 anchors_preset = 8

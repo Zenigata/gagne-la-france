@@ -181,7 +181,7 @@ layout_mode = 2
 
 [node name="RestButton" type="Button" parent="UILayer/UI"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(40, 14)
+custom_minimum_size = Vector2(50, 14)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Se reposer"
