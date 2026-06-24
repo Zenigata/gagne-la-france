@@ -41,14 +41,17 @@ func _ready() -> void:
 		func(): 
 			get_tree().change_scene_to_file(MAIN_MENU_PATH)
 	)
-	
-	match run_startup.type:
-		RunStartup.Type.NEW_RUN:
-			character = run_startup.picked_character.create_instance()
-			_start_run()
-		RunStartup.Type.CONTINUED_RUN:
-			_load_run()
 
+	if run_startup.picked_character == null:
+		SaveGame.delete_data()
+		get_tree().change_scene_to_file(MAIN_MENU_PATH)
+	else:
+		match run_startup.type:
+			RunStartup.Type.NEW_RUN:
+				character = run_startup.picked_character.create_instance()
+				_start_run()
+			RunStartup.Type.CONTINUED_RUN:
+				_load_run()
 
 func _start_run() -> void:
 	stats = RunStats.new()
