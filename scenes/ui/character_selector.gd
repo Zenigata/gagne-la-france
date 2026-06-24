@@ -10,6 +10,7 @@ const WIZARD_STATS := preload("res://characters/wizard/wizard.tres")
 @onready var title: Label = %Title
 @onready var description: Label = %Description
 @onready var character_portrait: TextureRect = %CharacterPortrait
+@onready var start_button: Button = %StartButton
 
 var current_character: CharacterStats : set = set_current_character
 
@@ -34,11 +35,13 @@ func _on_start_button_pressed() -> void:
 
 func _on_warrior_button_pressed() -> void:
 	current_character = WARRIOR_STATS
+	start_button.disabled = false
 
 
 func _on_wizard_button_pressed() -> void:
 	current_character = WIZARD_STATS
-
+	start_button.disabled = true
 
 func _on_assassin_button_pressed() -> void:
 	current_character = ASSASSIN_STATS
+	start_button.disabled = true

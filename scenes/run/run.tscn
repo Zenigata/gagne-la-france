@@ -166,6 +166,6 @@ text = "Retour"
 
 [node name="SaveAndQuitButton" type="Button" parent="PauseMenu/VBoxContainer/HBoxContainer" unique_id=1600856949]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 0)
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 text = "Menu principal"

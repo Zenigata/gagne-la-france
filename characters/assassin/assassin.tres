@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_dd5x6")
-character_name = "Assassin"
-description = "Sneaky lil' boi."
+character_name = "L'Assassin"
+description = "Silencieux et mortel."
 portrait = ExtResource("1_qvpwy")
 starting_deck = ExtResource("3_4shk0")
 cards_per_turn = 5
