@@ -11,5 +11,5 @@ type = 2
 rarity = 2
 cost = 3
 icon = ExtResource("1_ipoys")
-tooltip_text = "[center]Donne [color=\"ffdf00\"]2[/color] Muscle a chaque tour[/center]"
+tooltip_text = "[center]Donne [color=\"ffdf00\"]2[/color] Force a chaque tour[/center]"
 sound = ExtResource("3_2ru8h")

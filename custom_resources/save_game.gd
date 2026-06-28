@@ -12,6 +12,7 @@ const SAVE_PATH := "user://savegame.tres"
 @export var relics: Array[Relic]
 @export var map_data: Array[Array]
 @export var last_room: Room
+@export var levels_climbed: int
 @export var floors_climbed: int
 @export var was_on_map: bool
 

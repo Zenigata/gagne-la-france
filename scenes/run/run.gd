@@ -58,7 +58,8 @@ func _start_run() -> void:
 	
 	_setup_event_connections()
 	_setup_top_bar()
-	
+
+	map.levels_climbed = 1
 	map.generate_new_map()
 	map.unlock_floor(0)
 	
@@ -77,6 +78,7 @@ func _save_run(was_on_map: bool) -> void:
 	save_data.last_room = map.last_room
 	save_data.map_data = map.map_data.duplicate()
 	save_data.floors_climbed = map.floors_climbed
+	save_data.levels_climbed = map.levels_climbed
 	save_data.was_on_map = was_on_map
 	save_data.save_data()
 
@@ -94,7 +96,7 @@ func _load_run() -> void:
 	_setup_top_bar()
 	_setup_event_connections()
 	
-	map.load_map(save_data.map_data, save_data.floors_climbed, save_data.last_room)
+	map.load_map(save_data.map_data, save_data.levels_climbed, save_data.floors_climbed, save_data.last_room)
 	if save_data.last_room and not save_data.was_on_map:
 		_on_map_exited(save_data.last_room)
 
@@ -160,6 +162,15 @@ func _show_regular_battle_rewards() -> void:
 	reward_scene.add_card_reward()
 
 
+func _show_boss_battle_rewards() -> void:
+	var reward_scene := _change_view(BATTLE_REWARD_SCENE) as BattleReward
+	reward_scene.run_stats = stats
+	reward_scene.character_stats = character
+
+	reward_scene.add_gold_reward(map.last_room.battle_stats.roll_gold_reward())
+	reward_scene.add_card_reward()
+
+
 func _on_battle_room_entered(room: Room) -> void:
 	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
 	battle_scene.char_stats = character
@@ -206,10 +217,15 @@ func _on_event_room_entered(room: Room) -> void:
 
 
 func _on_battle_won() -> void:
-	if map.floors_climbed == MapGenerator.FLOORS:
+	if map.floors_climbed == MapGenerator.FLOORS and map.levels_climbed == MapGenerator.LEVELS:
 		var win_screen := _change_view(WIN_SCREEN_SCENE) as WinScreen
 		win_screen.character = character
 		SaveGame.delete_data()
+	elif map.floors_climbed == MapGenerator.FLOORS:
+		_show_boss_battle_rewards()
+		map.levels_climbed += 1
+		map.generate_new_map()
+		map.unlock_floor(0)
 	else:
 		_show_regular_battle_rewards()
 

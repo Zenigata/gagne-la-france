@@ -5,6 +5,8 @@ const SCROLL_SPEED := 15
 const MAP_ROOM = preload("res://scenes/map/map_room.tscn")
 const MAP_LINE = preload("res://scenes/map/map_line.tscn")
 
+@export var current_level: Label
+
 @onready var map_generator: MapGenerator = $MapGenerator
 @onready var lines: Node2D = %Lines
 @onready var rooms: Node2D = %Rooms
@@ -12,6 +14,7 @@ const MAP_LINE = preload("res://scenes/map/map_line.tscn")
 @onready var camera_2d: Camera2D = $Camera2D
 
 var map_data: Array[Array]
+var levels_climbed: int
 var floors_climbed: int
 var last_room: Room
 var camera_edge_y: float
@@ -34,12 +37,15 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func generate_new_map() -> void:
+	current_level.text = "Niveau " + str(levels_climbed)
 	floors_climbed = 0
 	map_data = map_generator.generate_map()
 	create_map()
+	camera_2d.position.y = 0
 
 
-func load_map(map: Array[Array], floors_completed: int, last_room_climbed: Room) -> void:
+func load_map(map: Array[Array], levels_completed: int, floors_completed: int, last_room_climbed: Room) -> void:
+	levels_climbed = levels_completed
 	floors_climbed = floors_completed
 	map_data = map
 	last_room = last_room_climbed
@@ -52,6 +58,8 @@ func load_map(map: Array[Array], floors_completed: int, last_room_climbed: Room)
 
 
 func create_map() -> void:
+	_clear_map()
+	
 	for current_floor: Array in map_data:
 		for room: Room in current_floor:
 			if room.next_rooms.size() > 0:
@@ -121,3 +129,13 @@ func _on_map_room_selected(room: Room) -> void:
 	last_room = room
 	floors_climbed += 1
 	Events.map_exited.emit(room)
+
+
+func _clear_map() -> void:
+	for n in rooms.get_children():
+		rooms.remove_child(n)
+		n.queue_free()
+	
+	for n in lines.get_children():
+		rooms.remove_child(n)
+		n.queue_free()

@@ -40,20 +40,20 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Aide bienvenue"
+text = "Choisis un bonus"
 horizontal_alignment = 1
 
 [node name="DuplicateLastCardButton" parent="VBoxContainer" instance=ExtResource("1_850a0")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
-text = "Duplique la dernière carte de votre deck."
+text = "Duplique votre derniere carte"
 
 [node name="PlusMaxHPButton" parent="VBoxContainer" instance=ExtResource("1_850a0")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
-text = "Ajoute 5 aux PV maximums."
+text = "Ajoute 5 aux PV max"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

@@ -7,4 +7,4 @@
 script = ExtResource("2_qak04")
 id = "true_strength_form"
 icon = ExtResource("1_hj76v")
-tooltip = "Berserk : donne 2 Muscle a chaque tour"
+tooltip = "Berserk : donne 2 Force a chaque tour"

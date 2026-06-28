@@ -4,6 +4,7 @@ extends Node
 const X_DIST := 30
 const Y_DIST := 25
 const PLACEMENT_RANDOMNESS := 5
+const LEVELS := 2
 const FLOORS := 15
 const MAP_WIDTH := 7
 const PATHS := 6
@@ -155,13 +156,14 @@ func _setup_room_types() -> void:
 				room.type = Room.Type.MONSTER
 				room.battle_stats = battle_stats_pool.get_random_battle_for_tier(0)
 
-	# 9th floor is always a treasure
-	for room: Room in map_data[8]:
-		if room.next_rooms.size() > 0:
-				room.type = Room.Type.TREASURE
-				
+	# 7 floors before the boss is always a treasure
+	if FLOORS > 7:
+		for room: Room in map_data[FLOORS - 7]:
+			if room.next_rooms.size() > 0:
+					room.type = Room.Type.TREASURE
+
 	# last floor before the boss is always a campfire
-	for room: Room in map_data[13]:
+	for room: Room in map_data[FLOORS - 2]:
 		if room.next_rooms.size() > 0:
 				room.type = Room.Type.CAMPFIRE
 	

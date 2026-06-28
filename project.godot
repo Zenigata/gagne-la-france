@@ -14,7 +14,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="Deck Builder Tutorial"
+config/name="Prototype 2027"
 config/tags=PackedStringArray("gamelab")
 run/main_scene="res://scenes/run/run.tscn"
 config/features=PackedStringArray("4.7", "Mobile")

@@ -40,7 +40,7 @@ theme_override_constants/separation = 5
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Tentez votre chance !"
+text = "Tentez votre chance ! Pariez 50 pièces…"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -48,13 +48,13 @@ vertical_alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(110, 20)
 layout_mode = 2
-text = "Parier 50 🪙 pour gagner 100 🪙 (50 % chance)"
+text = "pour en gagner 100 ! (50 % chance)"
 
 [node name="ThirtyButton" parent="VBoxContainer" instance=ExtResource("2_xqbom")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
-text = "Parier 50 🪙 pour gagner 200 🪙 (30 % chance)"
+text = "pour en gagner 200 ! (30 % chance)"
 
 [node name="SkipButton" parent="VBoxContainer" instance=ExtResource("2_xqbom")]
 unique_name_in_owner = true

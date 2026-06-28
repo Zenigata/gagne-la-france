@@ -5,7 +5,8 @@ const MODIFIER := 0.5
 
 
 func get_tooltip() -> String:
-	return tooltip % duration
+	var plurial = "s" if duration > 1 else ""
+	return tooltip % [duration, plurial]
 
 
 func initialize_status(target: Node) -> void:

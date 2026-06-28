@@ -4,7 +4,7 @@ extends Control
 const CARD_REWARDS = preload("res://scenes/ui/card_rewards.tscn")
 const REWARD_BUTTON = preload("res://scenes/ui/reward_button.tscn")
 const GOLD_ICON := preload("res://art/gold.png")
-const GOLD_TEXT := "%s 🪙"
+const GOLD_TEXT := "%s pieces"
 const CARD_ICON := preload("res://art/rarity.png")
 const CARD_TEXT := "Nouvelle carte"
 

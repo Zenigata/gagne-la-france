@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuwuwco4sf0y6"]
+[gd_scene format=3 uid="uid://cuwuwco4sf0y6"]
 
-[ext_resource type="Script" path="res://scenes/map/map.gd" id="1_l06hy"]
-[ext_resource type="Script" path="res://scenes/map/map_generator.gd" id="2_0qmb6"]
+[ext_resource type="Script" uid="uid://cmb3k848jmp8r" path="res://scenes/map/map.gd" id="1_l06hy"]
+[ext_resource type="Script" uid="uid://imiw7sjbunqi" path="res://scenes/map/map_generator.gd" id="2_0qmb6"]
 [ext_resource type="Resource" uid="uid://by8ka073e8sah" path="res://battles/battle_stats_pool.tres" id="3_cadnm"]
 [ext_resource type="Resource" uid="uid://bncylsfojpqyu" path="res://scenes/event_rooms/event_room_pool.tres" id="4_0q2ee"]
 
@@ -12,32 +12,45 @@ colors = PackedColorArray(0.215686, 0.215686, 0.215686, 1, 0.4, 0.219608, 0.2039
 gradient = SubResource("Gradient_1gu5h")
 width = 50
 
-[node name="Map" type="Node2D"]
+[node name="Map" type="Node2D" unique_id=1480700782 node_paths=PackedStringArray("current_level")]
 script = ExtResource("1_l06hy")
+current_level = NodePath("Level/Label")
 
-[node name="Visuals" type="Node2D" parent="."]
+[node name="Visuals" type="Node2D" parent="." unique_id=2122465748]
 
-[node name="Lines" type="Node2D" parent="Visuals"]
+[node name="Lines" type="Node2D" parent="Visuals" unique_id=563420807]
 unique_name_in_owner = true
 
-[node name="Rooms" type="Node2D" parent="Visuals"]
+[node name="Rooms" type="Node2D" parent="Visuals" unique_id=484250963]
 unique_name_in_owner = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=908398270]
 offset = Vector2(128, 72)
 
-[node name="MapGenerator" type="Node" parent="."]
+[node name="MapGenerator" type="Node" parent="." unique_id=2113138772]
 script = ExtResource("2_0qmb6")
 battle_stats_pool = ExtResource("3_cadnm")
 event_room_pool = ExtResource("4_0q2ee")
 
-[node name="MapBackground" type="CanvasLayer" parent="."]
+[node name="MapBackground" type="CanvasLayer" parent="." unique_id=1527119740]
 layer = -1
 
-[node name="Background" type="TextureRect" parent="MapBackground"]
+[node name="Background" type="TextureRect" parent="MapBackground" unique_id=29362501]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_i4y2l")
+
+[node name="Level" type="VBoxContainer" parent="." unique_id=1193858030]
+offset_left = 91.0
+offset_top = 104.0
+offset_right = 160.0
+offset_bottom = 144.0
+
+[node name="Label" type="Label" parent="Level" unique_id=714388472]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Niveau 1"
+horizontal_alignment = 1
