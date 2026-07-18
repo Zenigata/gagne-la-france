@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cmb3k848jmp8r" path="res://scenes/map/map.gd" id="1_l06hy"]
 [ext_resource type="Script" uid="uid://imiw7sjbunqi" path="res://scenes/map/map_generator.gd" id="2_0qmb6"]
-[ext_resource type="Resource" uid="uid://by8ka073e8sah" path="res://battles/battle_stats_pool.tres" id="3_cadnm"]
+[ext_resource type="Resource" uid="uid://by8ka073e8sah" path="res://battles/lvl1/battle_stats_pool_lvl1.tres" id="3_cadnm"]
 [ext_resource type="Resource" uid="uid://bncylsfojpqyu" path="res://scenes/event_rooms/event_room_pool.tres" id="4_0q2ee"]
+[ext_resource type="Resource" uid="uid://cqc7koxjvri7b" path="res://battles/lvl2/battle_stats_pool_lvl2.tres" id="4_fcby6"]
 
 [sub_resource type="Gradient" id="Gradient_1gu5h"]
 colors = PackedColorArray(0.215686, 0.215686, 0.215686, 1, 0.4, 0.219608, 0.203922, 1)
@@ -29,7 +30,8 @@ offset = Vector2(128, 72)
 
 [node name="MapGenerator" type="Node" parent="." unique_id=2113138772]
 script = ExtResource("2_0qmb6")
-battle_stats_pool = ExtResource("3_cadnm")
+battle_stats_pool_lvl1 = ExtResource("3_cadnm")
+battle_stats_pool_lvl2 = ExtResource("4_fcby6")
 event_room_pool = ExtResource("4_0q2ee")
 
 [node name="MapBackground" type="CanvasLayer" parent="." unique_id=1527119740]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BattleStats" format=3 uid="uid://bj08pt0mmfocv"]
+
+[ext_resource type="Script" uid="uid://bn5trp8qkpcgh" path="res://custom_resources/battle_stats.gd" id="1_4v2rl"]
+[ext_resource type="PackedScene" uid="uid://fwnbtanqcebt" path="res://battles/lvl2/tier_2_boss_21.tscn" id="1_w6qry"]
+
+[resource]
+script = ExtResource("1_4v2rl")
+battle_tier = 2
+weight = 1.0
+gold_reward_min = 20
+gold_reward_max = 40
+enemies = ExtResource("1_w6qry")
+metadata/_custom_type_script = "uid://bn5trp8qkpcgh"

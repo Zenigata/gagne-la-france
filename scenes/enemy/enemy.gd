@@ -28,18 +28,18 @@ func set_current_action(value: EnemyAction) -> void:
 
 func set_enemy_stats(value: EnemyStats) -> void:
 	stats = value.create_instance()
-	
+
 	if not stats.stats_changed.is_connected(update_stats):
 		stats.stats_changed.connect(update_stats)
 		stats.stats_changed.connect(update_action)
-	
+
 	update_enemy()
 
 
 func setup_ai() -> void:
 	if enemy_action_picker:
 		enemy_action_picker.queue_free()
-		
+
 	var new_action_picker := stats.ai.instantiate() as EnemyActionPicker
 	add_child(new_action_picker)
 	enemy_action_picker = new_action_picker
@@ -53,11 +53,11 @@ func update_stats() -> void:
 func update_action() -> void:
 	if not enemy_action_picker:
 		return
-	
+
 	if not current_action:
 		current_action = enemy_action_picker.get_action()
 		return
-	
+
 	var new_conditional_action := enemy_action_picker.get_first_conditional_action()
 	if new_conditional_action and current_action != new_conditional_action:
 		current_action = new_conditional_action
@@ -68,7 +68,7 @@ func update_enemy() -> void:
 		return
 	if not is_inside_tree(): 
 		await ready
-	
+
 	sprite_2d.texture = stats.art
 	arrow.position = Vector2.RIGHT * (sprite_2d.get_rect().size.x / 2 + ARROW_OFFSET)
 	setup_ai()
@@ -83,20 +83,20 @@ func update_intent() -> void:
 
 func do_turn() -> void:
 	stats.block = 0
-	
+
 	if not current_action:
 		return
-	
+
 	current_action.perform_action()
 
 
 func take_damage(damage: int, which_modifier: Modifier.Type) -> void:
 	if stats.health <= 0:
 		return
-	
+
 	sprite_2d.material = WHITE_SPRITE_MATERIAL
 	var modified_damage := modifier_handler.get_modified_value(damage, which_modifier)
-	
+
 	var tween := create_tween()
 	tween.tween_callback(Shaker.shake.bind(self, 16, 0.15))
 	tween.tween_callback(stats.take_damage.bind(modified_damage))
@@ -105,7 +105,7 @@ func take_damage(damage: int, which_modifier: Modifier.Type) -> void:
 	tween.finished.connect(
 		func():
 			sprite_2d.material = null
-			
+
 			if stats.health <= 0:
 				Events.enemy_died.emit(self)
 				queue_free()

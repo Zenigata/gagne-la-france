@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cmjvcalwcua1d"]
+
+[ext_resource type="Script" uid="uid://dnhcysun6wq2l" path="res://scenes/enemy/enemy_action_picker.gd" id="1_grfwj"]
+[ext_resource type="Script" uid="uid://bns2l8rnxua6" path="res://enemies/boss_21/boss_21_attack_action.gd" id="2_fh37p"]
+[ext_resource type="Script" uid="uid://88hogv7k757k" path="res://custom_resources/intent.gd" id="3_7ycif"]
+[ext_resource type="Texture2D" uid="uid://c1gvqgvgs3xc8" path="res://art/tile_0131.png" id="3_nva4b"]
+[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/enemy_attack.ogg" id="4_7ycif"]
+
+[sub_resource type="Resource" id="Resource_jcaow"]
+script = ExtResource("3_7ycif")
+base_text = "15"
+icon = ExtResource("3_nva4b")
+metadata/_custom_type_script = "uid://88hogv7k757k"
+
+[node name="Boss21Ai" type="Node" unique_id=695317319]
+script = ExtResource("1_grfwj")
+metadata/_custom_type_script = "uid://dnhcysun6wq2l"
+
+[node name="BossAttackAction" type="Node" parent="." unique_id=1244442111]
+script = ExtResource("2_fh37p")
+intent = SubResource("Resource_jcaow")
+sound = ExtResource("4_7ycif")
+type = 1
+chance_weight = 6.5
+metadata/_custom_type_script = "uid://buhl5f34ptf2r"

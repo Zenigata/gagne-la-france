@@ -27,7 +27,7 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if not visible:
 		return
-	
+
 	if event.is_action_pressed("scroll_up"):
 		camera_2d.position.y -= SCROLL_SPEED
 	elif event.is_action_pressed("scroll_down"):
@@ -39,7 +39,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func generate_new_map() -> void:
 	current_level.text = "Niveau " + str(levels_climbed)
 	floors_climbed = 0
-	map_data = map_generator.generate_map()
+	map_data = map_generator.generate_map(levels_climbed)
 	create_map()
 	camera_2d.position.y = 0
 
@@ -50,7 +50,7 @@ func load_map(map: Array[Array], levels_completed: int, floors_completed: int, l
 	map_data = map
 	last_room = last_room_climbed
 	create_map()
-	
+
 	if floors_climbed > 0:
 		unlock_next_rooms()
 	else:
@@ -59,12 +59,12 @@ func load_map(map: Array[Array], levels_completed: int, floors_completed: int, l
 
 func create_map() -> void:
 	_clear_map()
-	
+
 	for current_floor: Array in map_data:
 		for room: Room in current_floor:
 			if room.next_rooms.size() > 0:
 				_spawn_room(room)
-	
+
 	# Boss room has no next room but we need to spawn it
 	var middle := floori(MapGenerator.MAP_WIDTH * 0.5)
 	_spawn_room(map_data[MapGenerator.FLOORS-1][middle])
@@ -103,7 +103,7 @@ func _spawn_room(room: Room) -> void:
 	new_map_room.clicked.connect(_on_map_room_clicked)
 	new_map_room.selected.connect(_on_map_room_selected)
 	_connect_lines(room)
-	
+
 	if room.selected and room.row < floors_climbed:
 		new_map_room.show_selected()
 
@@ -111,7 +111,7 @@ func _spawn_room(room: Room) -> void:
 func _connect_lines(room: Room) -> void:
 	if room.next_rooms.is_empty():
 		return
-		
+
 	for next: Room in room.next_rooms:
 		var new_map_line := MAP_LINE.instantiate() as Line2D
 		new_map_line.add_point(room.position)
@@ -135,7 +135,7 @@ func _clear_map() -> void:
 	for n in rooms.get_children():
 		rooms.remove_child(n)
 		n.queue_free()
-	
+
 	for n in lines.get_children():
 		rooms.remove_child(n)
 		n.queue_free()
