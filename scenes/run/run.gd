@@ -36,7 +36,7 @@ var save_data: SaveGame
 func _ready() -> void:
 	if not run_startup:
 		return
-	
+
 	pause_menu.save_and_quit.connect(
 		func(): 
 			get_tree().change_scene_to_file(MAIN_MENU_PATH)
@@ -55,14 +55,14 @@ func _ready() -> void:
 
 func _start_run() -> void:
 	stats = RunStats.new()
-	
+
 	_setup_event_connections()
 	_setup_top_bar()
 
-	map.levels_climbed = 1
+	map.levels_climbed = 1 # debug 2
 	map.generate_new_map()
 	map.unlock_floor(0)
-	
+
 	save_data = SaveGame.new()
 	_save_run(true)
 
@@ -86,7 +86,7 @@ func _save_run(was_on_map: bool) -> void:
 func _load_run() -> void:
 	save_data = SaveGame.load_data()
 	assert(save_data, "Couldn't load last save")
-	
+
 	RNG.set_from_save_data(save_data.rng_seed, save_data.rng_state)
 	stats = save_data.run_stats
 	character = save_data.char_stats
@@ -95,7 +95,7 @@ func _load_run() -> void:
 	relic_handler.add_relics(save_data.relics)
 	_setup_top_bar()
 	_setup_event_connections()
-	
+
 	map.load_map(save_data.map_data, save_data.levels_climbed, save_data.floors_climbed, save_data.last_room)
 	if save_data.last_room and not save_data.was_on_map:
 		_on_map_exited(save_data.last_room)
@@ -104,7 +104,7 @@ func _load_run() -> void:
 func _change_view(scene: PackedScene) -> Node:
 	if current_view.get_child_count() > 0:
 		current_view.get_child(0).queue_free()
-	
+
 	get_tree().paused = false
 	var new_view := scene.instantiate()
 	current_view.add_child(new_view)
@@ -119,7 +119,7 @@ func _show_map() -> void:
 
 	map.show_map()
 	map.unlock_next_rooms()
-	
+
 	_save_run(true)
 
 
@@ -131,7 +131,7 @@ func _setup_event_connections() -> void:
 	Events.shop_exited.connect(_show_map)
 	Events.treasure_room_exited.connect(_on_treasure_room_exited)
 	Events.event_room_exited.connect(_show_map)
-	
+
 	battle_button.pressed.connect(_change_view.bind(BATTLE_SCENE))
 	campfire_button.pressed.connect(_change_view.bind(CAMPFIRE_SCENE))
 	map_button.pressed.connect(_show_map)
@@ -144,10 +144,10 @@ func _setup_top_bar():
 	character.stats_changed.connect(health_ui.update_stats.bind(character))
 	health_ui.update_stats(character)
 	gold_ui.run_stats = stats
-	
+
 	relic_handler.add_relic(character.starting_relic)
 	Events.relic_tooltip_requested.connect(relic_tooltip.show_tooltip)
-	
+
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
@@ -191,7 +191,7 @@ func _on_treasure_room_exited(relic: Relic) -> void:
 	reward_scene.run_stats = stats
 	reward_scene.character_stats = character
 	reward_scene.relic_handler = relic_handler
-	
+
 	reward_scene.add_relic_reward(relic)
 
 
@@ -232,7 +232,7 @@ func _on_battle_won() -> void:
 
 func _on_map_exited(room: Room) -> void:
 	_save_run(false)
-	
+
 	match room.type:
 		Room.Type.MONSTER:
 			_on_battle_room_entered(room)

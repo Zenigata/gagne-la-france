@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyStats" format=3 uid="uid://dse08vjvji16k"]
+
+[ext_resource type="Script" uid="uid://csml8orhg63vh" path="res://custom_resources/enemy_stats.gd" id="1_043gj"]
+[ext_resource type="PackedScene" uid="uid://8vj6b7u84hvr" path="res://enemies/mob2_0_1/mob2_0_1_ai.tscn" id="1_cw4qw"]
+[ext_resource type="Texture2D" uid="uid://cgopx2ponr1qi" path="res://art/tile_0121.png" id="2_8q6ld"]
+
+[resource]
+script = ExtResource("1_043gj")
+ai = ExtResource("1_cw4qw")
+max_health = 8
+art = ExtResource("2_8q6ld")
+metadata/_custom_type_script = "uid://csml8orhg63vh"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BattleStats" format=3 uid="uid://b4qlqtxkpamhk"]
+
+[ext_resource type="Script" uid="uid://bn5trp8qkpcgh" path="res://custom_resources/battle_stats.gd" id="1_cfibl"]
+[ext_resource type="PackedScene" uid="uid://ddpuehkykb8b7" path="res://battles/lvl2/tier_0_mob_21.tscn" id="1_dt2yr"]
+
+[resource]
+script = ExtResource("1_cfibl")
+weight = 2.5
+gold_reward_min = 53
+gold_reward_max = 72
+enemies = ExtResource("1_dt2yr")
+metadata/_custom_type_script = "uid://bn5trp8qkpcgh"

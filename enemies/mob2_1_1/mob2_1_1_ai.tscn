@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://jadjq66ibwll"]
+
+[ext_resource type="Script" uid="uid://dnhcysun6wq2l" path="res://scenes/enemy/enemy_action_picker.gd" id="1_006ey"]
+[ext_resource type="Script" uid="uid://b1ddi3o0jh3e8" path="res://enemies/mob2_1_1/mob2_1_1_attack_action.gd" id="2_um7dv"]
+[ext_resource type="Texture2D" uid="uid://c6rme2o6dyaoj" path="res://art/tile_0104.png" id="3_kqpfl"]
+[ext_resource type="Script" uid="uid://88hogv7k757k" path="res://custom_resources/intent.gd" id="4_yjt6u"]
+[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://art/enemy_attack.ogg" id="5_d4e0r"]
+
+[sub_resource type="Resource" id="Resource_bfwr1"]
+script = ExtResource("4_yjt6u")
+base_text = "%s"
+icon = ExtResource("3_kqpfl")
+metadata/_custom_type_script = "uid://88hogv7k757k"
+
+[node name="Mob211Ai" type="Node" unique_id=299782071]
+script = ExtResource("1_006ey")
+metadata/_custom_type_script = "uid://dnhcysun6wq2l"
+
+[node name="AttackAction" type="Node" parent="." unique_id=930016526]
+script = ExtResource("2_um7dv")
+intent = SubResource("Resource_bfwr1")
+sound = ExtResource("5_d4e0r")
+type = 1
+chance_weight = 1.0
+metadata/_custom_type_script = "uid://buhl5f34ptf2r"

@@ -7,5 +7,5 @@
 [resource]
 script = ExtResource("1_dyv27")
 ai = ExtResource("1_3lheq")
-max_health = 40
+max_health = 40 # debug 2
 art = ExtResource("1_frmvf")
