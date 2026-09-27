@@ -10,4 +10,4 @@ id = "mana_potion"
 type = 1
 icon = ExtResource("1_di0fn")
 tooltip = "[color=\"ffdf00\"]Gourde de mana[/color]
-Donne 1 action supplémentaire"
+Donne 1 action supplementaire"

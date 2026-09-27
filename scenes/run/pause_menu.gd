@@ -18,7 +18,7 @@ func _input(event: InputEvent) -> void:
 			_unpause()
 		else:
 			_pause()
-			
+
 		get_viewport().set_input_as_handled()
 
 

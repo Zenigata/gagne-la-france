@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ce6qar46eyuut"]
+
+[ext_resource type="PackedScene" uid="uid://d0efyathkfg74" path="res://scenes/enemy/enemy.tscn" id="1_1hyu8"]
+[ext_resource type="Resource" uid="uid://dcf15mlpk7117" path="res://enemies/boss_31/boss_31.tres" id="2_iurob"]
+
+[node name="Tier2Boss31" type="Node2D" unique_id=1137206345]
+
+[node name="Enemy" parent="." unique_id=1645012538 instance=ExtResource("1_1hyu8")]
+position = Vector2(207, 76)
+stats = ExtResource("2_iurob")

@@ -9,4 +9,4 @@ relic_name = "Blinding Potion"
 id = "blinding_potion"
 type = 1
 icon = ExtResource("1_gw7ui")
-tooltip = "Donne 1 action supplémentaire, mais cache les attaques ennemies"
+tooltip = "Donne 1 action supplementaire, mais cache les attaques ennemies"

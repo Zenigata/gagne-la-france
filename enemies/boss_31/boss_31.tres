@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyStats" format=3 uid="uid://dcf15mlpk7117"]
+
+[ext_resource type="Texture2D" uid="uid://chtnrxmaowwkd" path="res://art/tile_0111.png" id="1_4fwwf"]
+[ext_resource type="PackedScene" uid="uid://ce5r0vo8fvhrx" path="res://enemies/boss_31/boss_31_ai.tscn" id="1_7h4km"]
+[ext_resource type="Script" uid="uid://csml8orhg63vh" path="res://custom_resources/enemy_stats.gd" id="1_i2u64"]
+
+[resource]
+script = ExtResource("1_i2u64")
+ai = ExtResource("1_7h4km")
+art = ExtResource("1_4fwwf")
+metadata/_custom_type_script = "uid://csml8orhg63vh"

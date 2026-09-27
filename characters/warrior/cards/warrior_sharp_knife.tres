@@ -11,5 +11,5 @@ rarity = 2
 target = 1
 cost = 1
 icon = ExtResource("1_p0xvk")
-tooltip_text = "[center]Inflige [color=\"ff0000\"]%s[/color] degats. Carte boostee de +%s pour le reste du combat[/center]"
+tooltip_text = "[center]Inflige [color=\"ff0000\"]%s[/color] degats. Boost de +%s pour le combat[/center]"
 sound = ExtResource("3_uxg0o")
